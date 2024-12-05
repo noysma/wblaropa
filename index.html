@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/graphik-trial" rel="stylesheet">
+    <title>LAROPA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="ini">
+        <div class="logo">
+            <img src="imgs/Logo Laropa.png" alt="Company Logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav id="menu">
+            <ul>
+                <li><a href="customize.html">Shop</a></li>
+                <li><a href="#us">Us</a></li>
+                <li><a href="#process">Our Process</a></li>
+                <li><a href="#sustainability">Sustainability</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Banner -->
+        <section class="banner">
+            <img src="imgs/Banner.png" alt="Banner Image 1"> 
+            <div class="content">
+                <button onclick="window.location.href='customize.html'">Shop Now</button>
+            </div>
+        </section>
+        
+        <!-- US Section -->
+        <section id="us">
+            <div class="content">
+                <h1>About Us</h1>
+                <p>At LAROPA, we are passionate about transforming the ordinary into the extraordinary. We are a Colombian company dedicated to reimagining fast fashion by giving unsold products a second life, tailored to the unique style of our local customers.
+                    <br> <br>
+                    We believe in the power of personalization as a tool to combat waste and promote more conscious consumption. With Colombian creativity and craftsmanship, we turn surplus fast fashion into exclusive pieces that reflect identity, authenticity, and sustainability.
+                    <br> <br>
+                    Our mission is to create thoughtful, one-of-a-kind solutions that elevate personal style while contributing to a more responsible and sustainable fashion industry.
+                    <br> <br>
+                    <b>Your style, your story, our mission.</b></p>
+                <button onclick="window.location.href=''">More</button>
+            </div>
+        </section>
+
+        <!-- Our Process Section -->
+        <section id="process">
+            <h2>OUR PROCESS</h2>
+            <img src="imgs/PROCESS.png" alt="Our Process">
+            <br>
+            <button onclick="window.location.href=''">Learn More</button>
+        </section>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- First Column: LAROPA and Contact Info -->
+        <div class="footer-column">
+            <h3>LAROPA</h3>
+            <p>CONTACT</p>
+            <p>Monday - Friday: 9am - 6pm</p>
+            <p>Email: <a href="mailto:info@laropa.com">info@laropa.com</a></p>
+        </div>
+
+        <!-- Second Column: SHOP -->
+        <div class="footer-column">
+            <h3>SHOP</h3>
+            <p><a href="#">Help Center</a></p>
+            <p><a href="#">Initiate a return</a></p>
+        </div>
+
+        <!-- Third Column: LEGAL -->
+        <div class="footer-column">
+            <h3>LEGAL</h3>
+            <p><a href="#">Items & Conditions</a></p>
+            <p><a href="#">Privacy Policy</a></p>
+        </div>
+
+        <!-- Fourth Column: SOCIAL -->
+        <div class="footer-column">
+            <h3>SOCIAL</h3>
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">TikTok</a></p>
+        </div>
+    </div>
+</footer>
+
+</html>

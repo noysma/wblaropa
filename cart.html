@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="ini">
+        <div class="logo">
+            <img src="imgs/Logo Laropa.png" alt="Company Logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#us">Us</a></li>
+                <li><a href="#process">Our Process</a></li>
+                <li><a href="#sustainability">Sustainability</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Display selected image based on choices -->
+    <section class="product-image">
+        <img id="cart-image" src="" alt="Selected Product" />
+    </section>
+
+    <section class="cart-summary">
+        <div class="cart-details">
+            <p><strong>Size:</strong> <span id="cart-size"></span></p>
+            <p><strong>Color:</strong> <span id="cart-color"></span></p>
+            <p><strong>Location:</strong> <span id="cart-location"></span></p>
+            <p><strong>Embroidery Size:</strong> <span id="cart-embroidery-size"></span></p>
+            <p><strong>Price:</strong> <span id="cart-price"></span></p>
+        </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="description-section">
+        <h2>Description</h2>
+        <textarea id="description-text" placeholder="Enter your description here..."></textarea>
+        <div class="upload-container">
+            <label for="image-upload" class="upload-btn">Upload an Image</label>
+            <input type="file" id="image-upload" accept="image/*" class="hidden">
+        </div>
+    </section>
+    
+    <!-- Schedule the Call Section -->
+    <section class="schedule-call">
+        <h2>Schedule the Call</h2>
+        <form id="schedule-form">
+            <label for="call-date">Choose a Date:</label>
+            <input type="date" id="call-date">
+            
+            <label for="call-time">Choose a Time:</label>
+            <input type="time" id="call-time">
+            
+            <button type="submit">Schedule</button>
+        </form>
+    </section>
+
+    <script src="scripts.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Retrieve saved data from localStorage
+            const size = localStorage.getItem('size');
+            const color = localStorage.getItem('color');
+            const location = localStorage.getItem('location');
+            const embroiderySize = localStorage.getItem('embroidery-size');
+
+            // Set text content to corresponding span elements
+            document.getElementById('cart-size').textContent = size || "Not selected";
+            document.getElementById('cart-color').textContent = color || "Not selected";
+            document.getElementById('cart-location').textContent = location || "Not selected";
+            document.getElementById('cart-embroidery-size').textContent = embroiderySize || "Not selected";
+
+            // Price calculation based on location and embroidery size
+            let priceText = "";
+            if (location === "borders") {
+                priceText = "262 EUR - 1’230.000 COP";
+            } else if (location === "complete") {
+                priceText = "290 EUR - 1’361.000 COP";
+            } else if (location === "back") {
+                if (embroiderySize === "20x20") {
+                    priceText = "247 EUR - 1’160.000 COP";
+                } else if (embroiderySize === "25x25") {
+                    priceText = "254 EUR - 1’196.000 COP";
+                } else if (embroiderySize === "25x35") {
+                    priceText = "263 EUR - 1’236.000 COP";
+                }
+            }
+            document.getElementById('cart-price').textContent = priceText || "Price not available";
+
+            // Update the product image based on selections
+            const image = document.getElementById('cart-image');
+            
+            // Image change logic
+            if (color === "grey" && embroiderySize === "20x20" && location === "back") {
+                image.src = "imgs/Chaleco Gris Back 20x20.png";
+                image.alt = "Grey Chaleco Back 20x20";
+            } else if (color === "grey" && embroiderySize === "25x25" && location === "back") {
+                image.src = "imgs/Chaleco Gris Back 25x25.png";
+                image.alt = "Grey Chaleco Back 25x25";
+            } else if (color === "grey" && embroiderySize === "25x35" && location === "back") {
+                image.src = "imgs/Chaleco Gris Back 25x35.png";
+                image.alt = "Grey Chaleco Back 25x35";
+            } else if (color === "grey" && location === "borders") {
+                image.src = "imgs/Chaleco Gris Bordes.png";
+                image.alt = "Grey Chaleco Borders";
+            } else if (color === "grey" && location === "complete") {
+                image.src = "imgs/Chaleco Gris bordado Completo.png";
+                image.alt = "Brown Chaleco Borders";         
+            } else if (color === "beige" && embroiderySize === "20x20" && location === "back") {
+                image.src = "imgs/Chaleco Beige Back 20x20.png";
+                image.alt = "Brown Chaleco Back 20x20";
+            } else if (color === "beige" && embroiderySize === "25x25" && location === "back") {
+                image.src = "imgs/Chaleco Beige Back 25x25.png";
+                image.alt = "Brown Chaleco Back 25x25";
+            } else if (color === "beige" && embroiderySize === "25x35" && location === "back") {
+                image.src = "imgs/Chaleco Beige Back 25x35.png";
+                image.alt = "Brown Chaleco Back 25x35";
+            } else if (color === "beige" && location === "borders") {
+                image.src = "imgs/Chaleco Beige Bordes.png";
+                image.alt = "Brown Chaleco Borders";
+            } else if (color === "beige" && location === "complete") {
+                image.src = "imgs/Chaleco Beige Completo.png";
+                image.alt = "Brown Chaleco Borders";        
+            } else {
+                // Default cases
+                if (color === "grey") {
+                    image.src = "imgs/Chaleco Laropa Front.png"; // Default image for grey
+                    image.alt = "Grey Customizable Clothing";
+                    if(location === "back"){
+                        image.src = "imgs/Chaleco BACK.png"; // Default image for grey back
+                        image.alt = "Grey Customizable Clothing";
+                    }
+                } else if (color === "beige") { 
+                    image.src = "imgs/Chaleco Beige Laropa.png"; // Default image for beige
+                    image.alt = "Brown Customizable Clothing";
+                    if(location === "back"){
+                        image.src = "imgs/Chaleco back beige.png"; // Default image for beige back
+                        image.alt = "Grey Customizable Clothing";
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- First Column: LAROPA and Contact Info -->
+        <div class="footer-column">
+            <h3>LAROPA</h3>
+            <p>CONTACT</p>
+            <p>Monday - Friday: 9am - 6pm</p>
+            <p>Email: <a href="mailto:info@laropa.com">info@laropa.com</a></p>
+        </div>
+
+        <!-- Second Column: SHOP -->
+        <div class="footer-column">
+            <h3>SHOP</h3>
+            <p><a href="#">Help Center</a></p>
+            <p><a href="#">Initiate a return</a></p>
+        </div>
+
+        <!-- Third Column: LEGAL -->
+        <div class="footer-column">
+            <h3>LEGAL</h3>
+            <p><a href="#">Items & Conditions</a></p>
+            <p><a href="#">Privacy Policy</a></p>
+        </div>
+
+        <!-- Fourth Column: SOCIAL -->
+        <div class="footer-column">
+            <h3>SOCIAL</h3>
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">TikTok</a></p>
+        </div>
+    </div>
+</footer>
+
+</html>

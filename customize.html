@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Clothing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="ini">
+        <div class="logo">
+            <img src="imgs/Logo Laropa.png" alt="Company Logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#us">Us</a></li>
+                <li><a href="#process">Our Process</a></li>
+                <li><a href="#sustainability">Sustainability</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="us">
+            <div>
+                <img src="imgs/Customize me.png" alt="Company Logo">
+            </div>
+        </section>
+
+        <section class="customization">
+            <div class="image-container">
+                <img id="displayed-image" src="imgs/Chaleco Laropa Front.png" alt="Default Customizable Clothing">
+            </div>            
+            <form id="customization-form">
+                <!-- Size Dropdown -->
+                <select id="size" name="size">
+                    <option value="" selected disabled>Size</option>
+                    <option value="xs">XS</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                </select>
+                
+                <select id="color" name="color">
+                    <option value="" selected disabled>Color</option>
+                    <option value="grey">Grey</option>
+                    <option value="beige">Beige</option>
+                </select>
+                
+                <select id="technique" name="technique">
+                    <option value="" selected disabled>Type</option>
+                    <option value="embroidery">Embroidery</option>
+                    <option value="print">Print</option>
+                </select>
+                
+                <select id="location" name="location" onchange="handleDropdownChange()">
+                    <option value="" selected disabled>Location</option>
+                    <option value="back">Back</option>
+                    <option value="borders">Borders</option>
+                    <option value="complete">Complete</option>
+                </select>
+                
+                <select id="embroidery-size" name="embroidery-size" class="hidden" onchange="handleDropdownChange()">
+                    <option value="" selected disabled>Embroidery Size</option>
+                    <option value="20x20">20 x 20</option>
+                    <option value="25x25">25 x 25</option>
+                    <option value="25x35">25 x 35</option>
+                </select>
+            </form>
+        </section>
+
+        <!-- Price Section -->
+        <div class="price-container">
+            <p id="price"><span id="price-value"></span></p>
+        </div>
+
+        <div class="button-container">
+            <button id="checkout-button" class="cart" onclick="window.location.href='cart.html'" disabled>Check out</button>
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>    
+    <script>
+        localStorage.clear()
+        // Function to save dropdown values to localStorage
+        document.getElementById('size').addEventListener('change', function() {
+            localStorage.setItem('size', this.value);
+        });
+
+        document.getElementById('color').addEventListener('change', function() {
+            localStorage.setItem('color', this.value);
+        });
+
+        document.getElementById('technique').addEventListener('change', function() {
+            localStorage.setItem('technique', this.value);
+        });
+
+        document.getElementById('location').addEventListener('change', function() {
+            localStorage.setItem('location', this.value);
+            handleLocationChange(); // Call this function if necessary
+        });
+
+        document.getElementById('embroidery-size').addEventListener('change', function() {
+            localStorage.setItem('embroidery-size', this.value);
+        });
+
+        // Function to validate dropdown selections and enable/disable the button
+        function validateSelections() {
+            const size = document.getElementById('size').value;
+            const color = document.getElementById('color').value;
+            const technique = document.getElementById('technique').value;
+            const location = document.getElementById('location').value;
+            const embroiderySize = document.getElementById('embroidery-size').value;
+
+            // Check if all required fields are selected
+            const isEmbroiderySizeRequired = location === "back";
+            const isFormValid = size && color && technique && location && (!isEmbroiderySizeRequired || embroiderySize);
+
+            // Enable or disable the button based on validation
+            document.getElementById('checkout-button').disabled = !isFormValid;
+        }
+
+        // Function to show or hide the "Embroidery Size" dropdown based on location
+        function handleLocationChange() {
+            const location = document.getElementById('location').value;
+            const embroiderySizeDropdown = document.getElementById('embroidery-size');
+
+            if (location === "back") {
+                embroiderySizeDropdown.classList.remove("hidden");
+            } else {
+                embroiderySizeDropdown.classList.add("hidden");
+                embroiderySizeDropdown.value = ""; // Reset the selection
+            }
+
+            validateSelections(); // Validate the form after updating visibility
+        }
+
+        // Attach event listeners to dropdowns
+        document.getElementById('size').addEventListener('change', validateSelections);
+        document.getElementById('color').addEventListener('change', validateSelections);
+        document.getElementById('technique').addEventListener('change', validateSelections);
+        document.getElementById('location').addEventListener('change', () => {
+            handleLocationChange(); // Adjust "Embroidery Size" visibility
+            validateSelections(); // Validate the form
+        });
+        document.getElementById('embroidery-size').addEventListener('change', validateSelections);
+
+        // Ensure initial validation state on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            handleLocationChange();
+            validateSelections();
+        });        
+    </script>
+</body>
+
+<footer class="footer2">
+    <div class="footer2-container">
+        <!-- First Column: LAROPA and Contact Info -->
+        <div class="footer2-column">
+            <h3>LAROPA</h3>
+            <p>CONTACT</p>
+            <p>Monday - Friday: 9am - 6pm</p>
+            <p>Email: <a href="mailto:info@laropa.com">info@laropa.com</a></p>
+        </div>
+
+        <!-- Second Column: SHOP -->
+        <div class="footer2-column">
+            <h3>SHOP</h3>
+            <p><a href="#">Help Center</a></p>
+            <p><a href="#">Initiate a return</a></p>
+        </div>
+
+        <!-- Third Column: LEGAL -->
+        <div class="footer2-column">
+            <h3>LEGAL</h3>
+            <p><a href="#">Items & Conditions</a></p>
+            <p><a href="#">Privacy Policy</a></p>
+        </div>
+
+        <!-- Fourth Column: SOCIAL -->
+        <div class="footer2-column">
+            <h3>SOCIAL</h3>
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">TikTok</a></p>
+        </div>
+    </div>
+</footer>
+
+</html>
