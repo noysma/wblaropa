@@ -6,7 +6,6 @@
 }
 
 /* Body Styling */
-
 body {
     display: flex;
     flex-direction: column;
@@ -403,6 +402,16 @@ select:disabled {
 }
 
 /* Cart summary */
+.cart{
+    margin-top: 50px;
+    font-family: 'Graphik Trial', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
 .cart-summary {
     max-width: 600px;
     margin: 100px auto; /* margin from the top */
@@ -417,7 +426,7 @@ select:disabled {
     margin: 10px 0;
     font-size: 18px;
     color: #555;
-    text-align: center;
+    text-align: left;
 }
 
 .cart-details span {
@@ -427,6 +436,8 @@ select:disabled {
 /* Description Section */
 .description-section {
     margin: 40px auto;
+    margin-top: -110px;
+    margin-left: 180px;
     font-family: 'Graphik Trial', sans-serif;
     max-width: 600px;
     text-align: left;
@@ -482,7 +493,8 @@ input#image-upload {
 
 /* Schedule Call Section */
 .schedule-call {
-    margin: 40px auto;
+    margin: 20px auto;
+    margin-left: 180px;
     max-width: 600px;
     text-align: left;
 }
@@ -494,46 +506,59 @@ input#image-upload {
     margin-bottom: 10px;
 }
 
+/* Flexbox layout for the form */
 #schedule-form {
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Enables flexbox layout */
+    flex-direction: row; /* Arrange items in a row */
+    gap: 20px; /* Space between the label/input pairs */
+    align-items: flex-start; /* Align items to the top */
 }
 
+/* Each label/input pair in a div */
+#schedule-form div {
+    display: flex; /* Keeps label and input side by side */
+    flex-direction: column; /* Keeps the label on top of the input */
+    align-items: flex-start; /* Aligns both items to the left */
+}
+
+/* Label styling */
 #schedule-form label {
-    margin-top: 15px;
-    margin-bottom: -10px;
     font-family: 'Graphik Trial', sans-serif;
     font-size: 16px;
     color: #333;
+    margin-bottom: 5px; /* Space between label and input */
 }
 
+/* Input styling */
 #schedule-form input {
-    margin-top: 5px;
     padding: 10px;
     font-size: 16px;
     font-family: 'Graphik Trial', sans-serif;
     border: 1px solid #ccc;
     border-radius: 10px;
+    width: 200px; /* Set width for the input boxes */
 }
 
-#schedule-form button {
-    padding: 10px 20px; 
-    font-size: 16px; 
-    width: 160px; 
-    height: 40px; 
+/* Button styling */
+.sub-butt button {
+    padding: 10px 20px;
+    font-size: 16px;
     font-family: 'Graphik Trial', sans-serif;
     color: white;
     background-color: #816E84;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    margin-top: 80px; /* Adds space between the inputs and the button */
+    /* Ensures button is placed under the inputs */
+    margin-left: -440px;
+    flex-basis: 100%; /* Forces the button to go to the next row */
 }
 
-
-#schedule-form button:hover {
+.sub-butt button:hover {
     background-color: #B0A0BA;
 }
+
 
 #cart-image {
     max-width: 100%;    
@@ -544,8 +569,6 @@ input#image-upload {
 }
 
 /* Footer section - style */
-
-
 .footer {
     background-color: #596756;
     color: white;

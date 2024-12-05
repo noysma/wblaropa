@@ -29,43 +29,49 @@
     </header>
 
     <!-- Display selected image based on choices -->
-    <section class="product-image">
-        <img id="cart-image" src="" alt="Selected Product" />
-    </section>
-
-    <section class="cart-summary">
-        <div class="cart-details">
-            <p><strong>Size:</strong> <span id="cart-size"></span></p>
-            <p><strong>Color:</strong> <span id="cart-color"></span></p>
-            <p><strong>Location:</strong> <span id="cart-location"></span></p>
-            <p><strong>Embroidery Size:</strong> <span id="cart-embroidery-size"></span></p>
-            <p><strong>Price:</strong> <span id="cart-price"></span></p>
-        </div>
-    </section>
-
-    <!-- Description Section -->
-    <section class="description-section">
-        <h2>Description</h2>
-        <textarea id="description-text" placeholder="Enter your description here..."></textarea>
-        <div class="upload-container">
-            <label for="image-upload" class="upload-btn">Upload an Image</label>
-            <input type="file" id="image-upload" accept="image/*" class="hidden">
-        </div>
-    </section>
-    
-    <!-- Schedule the Call Section -->
-    <section class="schedule-call">
-        <h2>Schedule the Call</h2>
-        <form id="schedule-form">
-            <label for="call-date">Choose a Date:</label>
-            <input type="date" id="call-date">
+    <main>
+        <section class="cart">
+            <img id="cart-image" src="" alt="Selected Product" />
+            <section class="cart-summary">
+                <div class="cart-details">
+                    <p><strong>Size:</strong> <span id="cart-size"></span></p>
+                    <p><strong>Color:</strong> <span id="cart-color"></span></p>
+                    <p><strong>Location:</strong> <span id="cart-location"></span></p>
+                    <p><strong>Embroidery Size:</strong> <span id="cart-embroidery-size"></span></p>
+                    <p><strong>Price:</strong> <span id="cart-price"></span></p>
+                </div>
+            </section>
+        </section>
+            <!-- Description Section -->
+            <section class="description-section">
+                <h2>Description</h2>
+                <textarea id="description-text" placeholder="Enter your description here..."></textarea>
+                <div class="upload-container">
+                    <label for="image-upload" class="upload-btn">Upload an Image</label>
+                    <input type="file" id="image-upload" accept="image/*" class="hidden">
+                </div>
+            </section>
             
-            <label for="call-time">Choose a Time:</label>
-            <input type="time" id="call-time">
+            <!-- Schedule the Call Section -->
+            <section class="schedule-call">
+                <h2>Schedule the Call</h2>
+                <form id="schedule-form">
+                    <div>
+                        <label for="call-date">Choose a Date:</label>
+                        <input type="date" id="call-date">
+                    </div>
             
-            <button type="submit">Schedule</button>
-        </form>
-    </section>
+                    <div>
+                        <label for="call-time">Choose a Time:</label>
+                        <input type="time" id="call-time">
+                    </div>            
+                    <div class="sub-butt">
+                        <button type="submit">Schedule</button>
+                    </div>
+                </form>
+            </section>
+                       
+    </main>
 
     <script src="scripts.js"></script>
 
@@ -120,7 +126,7 @@
                 image.src = "imgs/Chaleco Gris bordado Completo.png";
                 image.alt = "Brown Chaleco Borders";         
             } else if (color === "beige" && embroiderySize === "20x20" && location === "back") {
-                image.src = "imgs/Chaleco Beige back 20x20.png";
+                image.src = "imgs/Chaleco Beige Back 20x20.png";
                 image.alt = "Brown Chaleco Back 20x20";
             } else if (color === "beige" && embroiderySize === "25x25" && location === "back") {
                 image.src = "imgs/Chaleco Beige Back 25x25.png";
