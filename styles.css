@@ -6,10 +6,20 @@
 }
 
 /* Body Styling */
-body { 
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
     font-family: 'Graphik Trial', sans-serif;
     color: #333;
     background-color: #FFFDFA;
+}
+
+/* The main content will expand to fill available space */
+main {
+    flex: 1; /* This ensures the main content takes up remaining space */
 }
 
 /* Header Styling */
@@ -363,7 +373,6 @@ select:disabled {
 /* Button to checkout */
 .button-container {
     display: flex;
-    margin-bottom: 40px;
     font-family: 'Graphik Trial', sans-serif;
     justify-content: center; /* Center horizontally */
     align-items: center;    /* Center vertically */
@@ -371,7 +380,7 @@ select:disabled {
     margin-top: 20px;
 }
 
-.cart {
+.checkout {
     padding: 10px 20px;
     font-size: 16px;
     font-family: 'Graphik Trial', sans-serif;
@@ -382,11 +391,11 @@ select:disabled {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-.cart:hover {
+.checkout:hover {
     background-color: #B0A0BA;
 }
 
-.cart:disabled {
+.checkout:disabled {
     background-color: #cccccc; /* Grey background */
     color: #666666; /* Darker grey text */
     cursor: not-allowed; /* Change cursor to indicate it's not clickable */
@@ -431,7 +440,7 @@ select:disabled {
 }
 
 textarea#description-text {
-    width: 68%;
+    width: 100%;
     height: 100px;
     padding: 10px;
     font-size: 16px;
@@ -444,7 +453,6 @@ textarea#description-text {
 .upload-container {
     margin-top: 20px;
 }
-
 
 /* Hide the actual file input field */
 input#image-upload {
@@ -536,6 +544,8 @@ input#image-upload {
 }
 
 /* Footer section - style */
+
+
 .footer {
     background-color: #596756;
     color: white;
@@ -601,78 +611,6 @@ input#image-upload {
     }
 
     .footer-column p {
-        margin-bottom: 8px;
-    }
-}
-
-/********************************************************/
-/* Footer section - style */
-.footer2 {
-    background-color: #596756;
-    color: white;
-    padding: 30px 20px;
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-}
-
-/* Footer container with columns */
-.footer2-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Each column inside the footer */
-.footer2-column {
-    text-align: left;
-}
-
-.footer2-column h3 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    font-family: 'Graphik Trial', sans-serif;
-    font-weight: bold;
-}
-
-.footer2-column p, .footer2-column a {
-    font-size: 14px;
-    font-family: 'Graphik Trial', sans-serif;
-    color: white;
-    text-decoration: none;
-    margin-bottom: 10px;
-    display: block; /* Mantieni display:block per i paragrafi */
-}
-
-.footer2-column a {
-    white-space: nowrap;  /* Impedisce che l'email vada a capo */
-    display: inline;      /* Mantieni inline per i link, per evitare che occupino tutta la larghezza */
-}
-
-.footer2-column a:hover {
-    text-decoration: underline;
-}
-
-/* For responsiveness */
-@media (max-width: 768px) {
-    .footer2-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer2-column {
-        margin-bottom: 20px;
-    }
-
-    .footer2-column h3 {
-        margin-bottom: 10px;
-    }
-
-    .footer2-column p {
         margin-bottom: 8px;
     }
 }
