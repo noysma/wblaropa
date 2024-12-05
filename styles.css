@@ -102,30 +102,28 @@ nav ul li a:hover {
 
 /* Banner Section */
 .banner {
-    margin-top: 200px;
-    position: relative;  /* This will allow positioning of elements inside */
-    width: 100%;
-    height: 100%; /* Set height of the banner */
-    overflow: hidden; /* Hide anything overflowing */
+    margin-top: 200px; /* Space above the banner */
+    position: relative; /* Positioning context for child elements */
+    width: 100%; /* Full width */
+    overflow: hidden; /* Hide overflow if image exceeds bounds */
 }
 
 .banner img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This ensures the image covers the entire area */
+    object-fit: cover; /* Ensure the image covers the entire banner */
 }
 
-/* Content Div (Positioning the button on top of the image) */
+/* Position the Content Div at the Bottom */
 .banner .content {
-    margin-top: 150px;
-    position: absolute;
-    top: 70%; /* Vertical center */
-    left: 50%; /* Horizontal center */
-    transform: translate(-50%, -50%); /* Offset by 50% of width/height to truly center */
-    text-align: center; /* Ensure button is centered inside content */
+    position: absolute; /* Absolute position within the relative .banner */
+    bottom: 40px; /* Distance from the bottom of the image */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset content horizontally for true centering */
+    text-align: center; /* Ensure text or button is centered inside content */
 }
 
-/* Styling the button */
+/* Styling the Button */
 .banner .content button {
     padding: 10px 20px;
     font-size: 16px;
@@ -141,6 +139,7 @@ nav ul li a:hover {
 .banner .content button:hover {
     background-color: #B0A0BA; /* Change background on hover */
 }
+
 
 
 /* US Section Styling */
