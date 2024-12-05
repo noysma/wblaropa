@@ -367,6 +367,7 @@ select:disabled {
 /* Button to checkout */
 .button-container {
     display: flex;
+    margin-bottom: 40px;
     font-family: 'Graphik Trial', sans-serif;
     justify-content: center; /* Center horizontally */
     align-items: center;    /* Center vertically */
