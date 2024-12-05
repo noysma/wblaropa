@@ -251,7 +251,8 @@ nav ul li a:hover {
     margin-top: -150px;
     font-family: 'Graphik Trial', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     padding: 20px;
 }
@@ -283,12 +284,6 @@ nav ul li a:hover {
     background-color: #FFFDFA;
 }
 
-
-
-/* #price {
-    font-weight: bold;
-} */
-
 #price-value {
     color: #333;
 }
@@ -306,6 +301,7 @@ form {
     max-width: 400px;
     display: flex;
     flex-direction: column;
+    margin-bottom: -150px;
     gap: 15px;
 }
 
@@ -605,6 +601,78 @@ input#image-upload {
     }
 
     .footer-column p {
+        margin-bottom: 8px;
+    }
+}
+
+/********************************************************/
+/* Footer section - style */
+.footer2 {
+    background-color: #596756;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Footer container with columns */
+.footer2-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Each column inside the footer */
+.footer2-column {
+    text-align: left;
+}
+
+.footer2-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-family: 'Graphik Trial', sans-serif;
+    font-weight: bold;
+}
+
+.footer2-column p, .footer2-column a {
+    font-size: 14px;
+    font-family: 'Graphik Trial', sans-serif;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block; /* Mantieni display:block per i paragrafi */
+}
+
+.footer2-column a {
+    white-space: nowrap;  /* Impedisce che l'email vada a capo */
+    display: inline;      /* Mantieni inline per i link, per evitare che occupino tutta la larghezza */
+}
+
+.footer2-column a:hover {
+    text-decoration: underline;
+}
+
+/* For responsiveness */
+@media (max-width: 768px) {
+    .footer2-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer2-column {
+        margin-bottom: 20px;
+    }
+
+    .footer2-column h3 {
+        margin-bottom: 10px;
+    }
+
+    .footer2-column p {
         margin-bottom: 8px;
     }
 }
