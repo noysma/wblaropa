@@ -133,7 +133,6 @@ nav ul li a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    position: absolute;
     transition: background-color 0.3s;
 }
 
