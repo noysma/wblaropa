@@ -382,6 +382,7 @@ select:disabled {
 /* Button to checkout */
 .button-container {
     display: flex;
+    margin-bottom: 90px;
     font-family: 'Graphik Trial', sans-serif;
     justify-content: center; /* Center horizontally */
     align-items: center;    /* Center vertically */
@@ -506,6 +507,7 @@ input#image-upload {
 .schedule-call {
     margin: 2% auto; /* Use percentages for top/bottom margin */
     margin-top: 40px;
+    margin-bottom: 90px;
     margin-left: 15%; /* Use percentage for left margin */
     font-family: 'Graphik Trial', sans-serif;
     max-width: 90%; /* Allow it to shrink/grow with the screen size */
