@@ -66,7 +66,7 @@ function handleDropdownChange() {
         image.src = "imgs/Chaleco Gris bordado completo.png";
         image.alt = "Brown Chaleco Borders";         
     } else if (color === "beige" && size === "20x20" && location === "back") {
-        image.src = "imgs/Chaleco Beige Back 20x20.png";
+        image.src = "imgs/Chaleco Beige back 20x20.png";
         image.alt = "Brown Chaleco Back 20x20";
     } else if (color === "beige" && size === "25x25" && location === "back") {
         image.src = "imgs/Chaleco Beige Back 25x25.png";
