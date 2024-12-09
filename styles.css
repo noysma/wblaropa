@@ -635,8 +635,11 @@ input#image-upload {
     text-decoration: underline;
 }
 
-.shop {
+.shop-container{
     margin-top: 150px;
+}
+
+.shop {
     font-family: 'Graphik Trial', sans-serif;
     display: flex;
     flex-direction: row;
@@ -651,6 +654,11 @@ input#image-upload {
     flex-direction: column; /* Stack image and text vertically */
     align-items: center; /* Center align text under the image */
     text-align: center;
+}
+
+.shop:last-of-type {
+    justify-content: flex-start; /* Align the single item to the left */
+    padding-left: calc(50% - 260px); /* Center-align it under the previous row's items */
 }
 
 .shop img {
