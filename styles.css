@@ -756,9 +756,9 @@ input#image-qr {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    margin-top: 20px; /* Adds space between the inputs and the button */
-    width: 100%;      /* Make the button take full width */
-    max-width: 100px; /* Limit max-width to avoid stretching */
+    margin-top: 20px; 
+    width: 95px; 
+    height: 40px; 
     transition: background-color 0.3s;
 }
 
