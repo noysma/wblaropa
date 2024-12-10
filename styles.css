@@ -797,10 +797,16 @@ input#image-qr {
     }
 
     /* Adjust buttons for smaller screens */
-    .qr-btn, .butt button {
-        width: 100%;       /* Full width for smaller screens */
-        max-width: 100%;   /* Remove max-width constraints */
-        font-size: 14px;   /* Slightly smaller font for better fit */
-        padding: 12px;     /* Slightly more padding for touch targets */
+    .qr-btn {
+        width: 160px; 
+        height: 40px; 
+        font-size: 14px;   
+        padding: 12px;     
+    }
+    .butt button {
+        width: 95px; 
+        height: 40px; 
+        font-size: 14px;   
+        padding: 12px;     
     }
 }
