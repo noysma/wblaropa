@@ -27,7 +27,7 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f8f8f8;
+    background-color: #FFFDFA;
     position: fixed;
     width: 100%;
     top: 0;
@@ -673,4 +673,134 @@ input#image-upload {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 20px;
+}
+
+/* QR PART NOT VISIBLE (only qr) */
+.full-qr {
+    display: flex;
+    margin-top: 150px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #FFFDFA;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.full-qr img {
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.qr-section {
+    width: 100%;
+    max-width: 400px;
+}
+
+.qr-section p {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-family: 'Graphik Trial', sans-serif;
+    color: #000;
+}
+
+.qr-section textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Graphik Trial', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.qr-container {
+    margin-top: 20px;
+}
+
+/* Hide the actual file input field */
+input#image-qr {
+    display: none;
+}
+
+/* Style the label to act as a button */
+.qr-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 160px; 
+    height: 40px; 
+    font-family: 'Graphik Trial', sans-serif;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+/* Hover effect */
+.qr-btn:hover {
+    background-color: grey;
+}
+
+/* Button inside .butt class */
+.butt button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Graphik Trial', sans-serif;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px; /* Adds space between the inputs and the button */
+    width: 100%;      /* Make the button take full width */
+    max-width: 100px; /* Limit max-width to avoid stretching */
+    transition: background-color 0.3s;
+}
+
+/* Hover effect */
+.butt button:hover {
+    background-color: grey;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header.ini {
+        padding: 10px;
+    }
+
+    .full-qr {
+        margin-top: 50px;
+        padding: 15px;
+    }
+
+    .qr-section p {
+        font-size: 18px;
+    }
+
+    .qr-section textarea {
+        height: 100px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust buttons for smaller screens */
+    .qr-btn, .butt button {
+        width: 100%;       /* Full width for smaller screens */
+        max-width: 100%;   /* Remove max-width constraints */
+        font-size: 14px;   /* Slightly smaller font for better fit */
+        padding: 12px;     /* Slightly more padding for touch targets */
+    }
 }
