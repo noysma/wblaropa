@@ -670,9 +670,14 @@ input#image-upload {
 .shop p {
     font-family: 'Graphik Trial', sans-serif;
     margin-top: 20px;
+    color: black;
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 20px;
+}
+
+.shop a {
+    color: black;
 }
 
 /* QR PART NOT VISIBLE (only qr) */
