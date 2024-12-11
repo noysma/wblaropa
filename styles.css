@@ -767,6 +767,37 @@ input#image-qr {
     background-color: grey;
 }
 
+/* Styling for the new body section with plain text */
+
+.story-nav {
+    text-align: center;
+    margin-bottom: 80px;
+    font-family: 'Graphik Trial', sans-serif;
+}
+
+.greeting {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #000; /* Adjust color if needed */
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.plain-text {
+    font-size: 18px;
+    color: #000;
+}
+
+.plain-text.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
 /* Responsive Design */
 @media (max-width: 600px) {
     header.ini {
