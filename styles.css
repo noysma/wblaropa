@@ -840,4 +840,20 @@ input#image-qr {
         font-size: 14px;   
         padding: 12px;     
     }
+    .story-nav {
+        margin-bottom: 40px; /* Reduce margin for smaller screens */
+    }
+
+    .greeting {
+        font-size: 18px; /* Decrease font size */
+    }
+
+    .links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 20px; /* Reduce gap between links */
+    }
+
+    .plain-text {
+        font-size: 16px; /* Decrease font size */
+    }
 }
