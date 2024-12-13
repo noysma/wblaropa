@@ -803,7 +803,293 @@ input#image-qr {
 }
 
 
+
+
 /* Responsive Design */
+@media (max-width: 480px) {
+    header {
+        display: flex;
+        justify-content: center;  /* Center the logo horizontally */
+        align-items: center;
+        margin-bottom: -15%;
+        position: relative;       /* Allows absolute positioning for menu icon */
+        height: 60px;
+        padding: 10px;
+    }
+
+    /* Logo styling */
+    .logo {
+        position: absolute;
+        top: 0;
+        margin-top: -1%;
+        transform: translateX(-50%);  /* Ensures the logo is centered */
+        max-width: 180px;
+    }
+
+    /* Position the menu icon on the left side */
+    .menu-icon {
+        position: absolute;
+        left: 10px;    /* Keep the menu icon on the left side */
+        top: 10%;
+        margin-top: 5%;
+        transform: translateY(-50%);  /* Vertically center the menu icon */
+        height: 25px;
+        width: 30px;
+    }
+
+    /* Ensure the dropdown menu opens below the header */
+    nav {
+        position: absolute;
+        top: 60px;    /* Aligns the menu with the bottom of the header */
+        margin-left: -33%;
+        width: 100%;  /* Full-width menu */
+    }
+
+
+    .banner {
+        margin-top: 25%;
+    }
+
+    .banner .content {
+        bottom: 3%;
+    }
+
+    .banner .content button,
+    #us button,
+    #process button,
+    .checkout,
+    .upload-btn,
+    .sub-butt button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    #us h1,
+    .description-section h2,
+    #process h2 {
+        font-size: 20px;
+    }
+
+    #us p,
+    .cart-details p,
+    .plain-text,
+    .qr-section p,
+    label {
+        font-size: 14px;
+    }
+
+    textarea#description-text {
+        font-size: 12px;
+        height: 70px;
+    }
+
+    .customization {
+        margin-top: 1%;
+        padding: 5px;
+        margin-bottom: 20%;
+    }
+
+    .image-container img {
+        margin-top: 25%;
+        max-width: 250px;
+    }
+
+    form {
+        margin-bottom: 5%;
+        gap: 10px;
+    }
+
+    .schedule-call {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    #schedule-form input {
+        padding: 8px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .cart {
+        padding: 5px;
+        margin-bottom: 20%;
+        flex-direction: column;
+    }
+
+    #cart-image {
+        margin: 80px auto;
+        max-height: 250px;
+    }
+}
+
+/* --- Tablets and Small Screens: max-width 768px --- */
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: center;  /* Center the logo horizontally */
+        align-items: center;
+        margin-bottom: -15%;
+        position: relative;       /* Allows absolute positioning for menu icon */
+        height: 60px;
+        padding: 10px;
+    }
+
+    /* Logo styling */
+    .logo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);  /* Ensures the logo is centered */
+        max-width: 180px;
+    }
+
+    /* Position the menu icon on the left side */
+    .menu-icon {
+        position: absolute;
+        left: 10px;    /* Keep the menu icon on the left side */
+        top: 10%;
+        margin-top: 3%;
+        transform: translateY(-50%);  /* Vertically center the menu icon */
+        height: 25px;
+        width: 30px;
+    }
+
+    /* Ensure the dropdown menu opens below the header */
+    nav {
+        position: absolute;
+        top: 60px;    /* Aligns the menu with the bottom of the header */
+        margin-left: -33%;
+        width: 100%;  /* Full-width menu */
+    }
+
+    .banner {
+        margin-top: 150px;
+    }
+
+    #us {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    #us img {
+        width: 60%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #us h1 {
+        font-size: 28px;
+    }
+
+    #us p {
+        font-size: 14px;
+    }
+
+    #process {
+        margin: 60px 10px;
+    }
+
+    #process h2 {
+        font-size: 24px;
+    }
+
+    #process img {
+        max-width: 90%;
+    }
+
+    .customization {
+        flex-direction: column;
+        margin-top: -100px;
+        padding: 10px;
+    }
+
+    .cart-customization {
+        margin-bottom: 5%;
+        padding: 10px;
+    }
+
+    .image-container img {
+        max-width: 300px;
+    }
+
+    .price-container {
+        flex-direction: column;
+    }
+
+    form {
+        margin-bottom: -100px;
+    }
+
+    .button-container {
+        margin-bottom: 60px;
+    }
+
+    .checkout {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .cart {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .cart-summary {
+        margin: 50px auto;
+        max-width: 100%;
+    }
+
+    .description-section {
+        width: 90%;
+        margin: -10% 5% 0;
+    }
+
+    .description-section h2 {
+        font-size: 20px;
+    }
+
+    textarea#description-text {
+        font-size: 14px;
+        height: 80px;
+    }
+
+    .upload-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+        width: 140px;
+        height: 35px;
+    }
+
+    .schedule-call {
+        width: 90%;
+        margin: 10% 5%;
+    }
+
+    #schedule-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #schedule-form input {
+        width: 100%;
+    }
+
+    .sub-butt button {
+        width: 100%;
+        margin-top: 10%;
+        margin-bottom: 90%;
+        margin-left: 1%;
+    }
+
+    #cart-image {
+        margin: 100px auto;
+        max-height: 300px;
+    }
+}
+
+/* Responsive Design QR */
 @media (max-width: 600px) {
     header.ini {
         padding: 10px;
